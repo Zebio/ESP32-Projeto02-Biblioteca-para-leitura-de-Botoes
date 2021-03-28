@@ -23,7 +23,7 @@ Se estivermos usando resistores de pul-down, devemos enviar
 O segundo parâmetro é o tempo de amortecimento do ruído do
 botão. é recomendado um valor entre 120 e 150 ms
 */
-le_botoes_class le_botoes(0,130);
+le_botoes_class le_botoes(0,300);
 
 
 /*------------Inicialização-------------------*/

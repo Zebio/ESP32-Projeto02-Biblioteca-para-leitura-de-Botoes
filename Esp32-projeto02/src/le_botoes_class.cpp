@@ -22,4 +22,6 @@ bool le_botoes_class::getEstado(int botao)
         tempo_atual_botao[botao]=millis();
         return false;
     }
+    else 
+        return false;
 }
