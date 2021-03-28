@@ -27,17 +27,17 @@ le_botoes_class le_botoes(0,300);
 
 
 /*------------Inicialização-------------------*/
+//inicializamos os 4 GPIOs, lembrando que os botões estão usando
+//pull-ups internos do ESP.
 void setup() {
   pinMode (bt1,INPUT_PULLUP);
   pinMode (bt2,INPUT_PULLUP);
   pinMode (led1,OUTPUT);
   pinMode (led2,OUTPUT);
-
-  digitalWrite(led1,LOW);
-  digitalWrite(led2,LOW);
 }
 
 void loop() {
+  //O loop simplesmente verifica o estado dos botões e os escreve nos LEDs.
   digitalWrite(led1,le_botoes.getEstado(bt1));
   digitalWrite(led2,le_botoes.getEstado(bt2));
 }
