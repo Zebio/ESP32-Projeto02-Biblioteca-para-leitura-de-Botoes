@@ -12,5 +12,5 @@ no outro. Porisso ela é bastante eficiente no projeto de teclados.
 O uso da biblioteca é bem intuitivo. Simplesmente declaramos a classe dizendo qual o nível lógico alto
 dos botões e qual o intervalo de tempo necessário. Após isso, para receber o estado de qualquer botão podemos
 simplesmente chamar a funcção 'getEstado(botao)', que retorna um tipo bool, que retorna se o botão está
-pressionado ou não. Todos os tratamentos internos de tempo são feitos dentro dos botões da própria biblioteca.
+pressionado ou não. Todos os tratamentos internos de tempo são feitos dentro da própria biblioteca.
 Um exemplo bem simples de uso da biblioteca usando 2 LEDs e 2 Botões encontra-se no projeto.
