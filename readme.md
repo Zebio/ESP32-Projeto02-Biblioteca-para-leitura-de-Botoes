@@ -1,16 +1,13 @@
-Projeto de biblioteca para a captura de entradas digitais como push-buttons, teclados e alguns sensores. 
-Um dos problemas em push-buttons é o ruído causado pelos contatos mecânico dos botões. Para resolver
-isso podemos usar hardware (capacitores) ou software. Usar hardware pode se tornar caro pois adiciona
-componentes na PCB. Já a solução usando software é geralmente feita usando delays no processador de 
-aproximadamente 150 ms para suprimir o ruído dos contatos dos botões.
-O problema de usar delays é que eles inutilizam o processador por algum determinado intervalo de tempo
-então qualquer outro botão pressionado ou instruções enviadas ao processador não serão processadas.
-Essa biblioteca resolve esse problema usando a função millis(), que é uma maneira mais eficaz de contar
-o tempo, mas sem prender o processador, deixando-o livre para as outras tarefas. Outra vantagem é que 
-podemos usar vários botões num curto intervalo de tempo sem que o intervalo de tempo de um botão interfira
-no outro. Porisso ela é bastante eficiente no projeto de teclados.
-O uso da biblioteca é bem intuitivo. Simplesmente declaramos a classe dizendo qual o nível lógico alto
-dos botões e qual o intervalo de tempo necessário. Após isso, para receber o estado de qualquer botão podemos
-simplesmente chamar a funcção 'getEstado(botao)', que retorna um tipo bool, que retorna se o botão está
-pressionado ou não. Todos os tratamentos internos de tempo são feitos dentro da própria biblioteca.
-Um exemplo bem simples de uso da biblioteca usando 2 LEDs e 2 Botões encontra-se no projeto.
+# Biblioteca para Leitura de Botões
+
+### Resumo
+
+Há um problema comum em projetos em que temos um botão como entrada do sistema. Temos que criar um atrazo via Hardware (capacitores) ou Software (delays) para que caso o usuário pressione o botão o sistema não interprete que o botão foi pressionado várias vezes. Esse problema acontece por ruídos nos contatos mecânicos dos botões e pelo fato do ciclo de instruções dos processadores serem muito mais rápidos que o tempo em que o usuário permanece pressionando o botão.
+
+Nesse projeto foi criada uma biblioteca que automatiza o processo de criação dos delays, de modo que o programador só tenha que chamar a função "Get_Estado(GPIO);" essa função dess biblioteca faz todos os cálculos de delays usando a função "millis" sem prender o processador e retorna um tipo boolean que representa o estado atual do botão após os cálculos de delay.
+
+### Como Usar
+
+Para clonar projetos do PlatformIO como esse, siga o guia passo-a-passo disponível no repositório: [Instrucoes-PlatformIO](https://github.com/Zebio/Instrucoes-PlatformIO)
+
+Já para o uso da biblioteca em outros projetos o programador basta incluir os arquivos da biblioteca "le_botoes_class.hpp" e "le_botoes_class.cpp". Em seguida fazer a declaração da classe "le_botoes_class" da mesma maneira que está feito no arquivo desse projeto [main.cpp](https://github.com/Zebio/ESP32-Projeto02-Biblioteca-para-leitura-de-Botoes/blob/main/src/main.cpp) com o código comentado
